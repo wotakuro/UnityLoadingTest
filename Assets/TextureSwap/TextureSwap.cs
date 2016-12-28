@@ -2,42 +2,52 @@
 using UnityEngine.UI;
 using System.IO;
 using System.Collections;
-
-public class TextureSwap : MonoBehaviour {
-    public TextMesh result;
-	// Use this for initialization
-	void Start () {
-        RawImage img = this.gameObject.GetComponentInChildren<RawImage>();
-        Texture2D tex = img.texture as Texture2D;
-
-        try
+namespace NoAssetBundlePrj
+{
+    public class TextureSwap : MonoBehaviour
+    {
+        public TextMesh result;
+        // Use this for initialization
+        void Start()
         {
-            string path = Path.Combine(Application.streamingAssetsPath, "swap.png");
-#if UNITY_ANDROID
+            this.LoadTexture();
+        }
+        void LoadTexture()
+        {
+            RawImage img = this.gameObject.GetComponentInChildren<RawImage>();
+            Texture2D tex = img.texture as Texture2D;
+
+            try
+            {
+                string path = Path.Combine(Application.streamingAssetsPath, "test.data");
+#if UNITY_ANDROID && !UNITY_EDITOR
 
             WWW www = new WWW(path);
             while (!www.isDone) { }
 
             byte[] bin = www.bytes;
 
-#else            
-            byte[] bin = File.ReadAllBytes(path);
+#else
+                byte[] bin = File.ReadAllBytes(path);
 #endif
-            bool loadRes = tex.LoadImage(bin);
+                Texture2D newTex = new Texture2D(2048,2048,TextureFormat.ETC2_RGB,false);
+                newTex.LoadRawTextureData(bin);
+                newTex.Apply();
+                img.texture = newTex;
 
-            if (result != null)
-            {
-                result.text = loadRes.ToString();
+                if (result != null)
+                {
+                }
+                Debug.Log(tex.name);
             }
-            Debug.Log(tex.name);
-        }
-        catch (System.Exception e)
-        {
-            if (result != null)
+            catch (System.Exception e)
             {
-                result.text = e.ToString();
-            }
+                if (result != null)
+                {
+                    result.text = e.ToString();
+                }
 
+            }
         }
-	}
+    }
 }
