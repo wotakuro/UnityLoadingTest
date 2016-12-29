@@ -36,6 +36,7 @@ namespace NoAssetBundlePrj
 
         byte[] pvrBin;// = LoadDataFromStreamingAssets("test.data");
         byte[] AbBin;// = LoadDataFromStreamingAssets("assetbundletest.ab");
+        byte[] AbBinInBin;// = LoadDataFromStreamingAssets("binarytest.ab");
 
         void Start()
         {
@@ -45,18 +46,26 @@ namespace NoAssetBundlePrj
         {
             yield return null;
             pvrBin = LoadDataFromStreamingAssets("test.data");
-
+#if UNITY_ANDROID && !UNITY_EDITOR
             string path = Path.Combine(Application.streamingAssetsPath, "assetbundletest.ab");
             WWW www = new WWW(path);
             while (!www.isDone) { yield return null; }
-            //AbBin = www.bytes;
+            AbBin = www.bytes;
 
+            path = Path.Combine(Application.streamingAssetsPath, "binarytest.ab");
+            WWW www2 = new WWW(path);
+            while (!www2.isDone) { yield return null; }
+            AbBinInBin = www.bytes;
+
+#else
+            AbBin = LoadDataFromStreamingAssets("assetbundletest.ab");
+            AbBinInBin = LoadDataFromStreamingAssets("assetbundletest.ab");
+#endif
             if (result != null)
             {
                 result.text = "Ready";
             }
-            AbBin = www.bytes;
-            Debug.Log("Complete Load");
+
         }
 
         public TextMesh result;
@@ -66,29 +75,41 @@ namespace NoAssetBundlePrj
             Debug.Log("KurokawaTest TestExecute");
             int tryNum = 2;
 
-            float abStart = Time.realtimeSinceStartup;
 
-            Profiler.BeginSample("LoadFromAssetBundle");
-            for (int i = 0; i < tryNum; ++i)
-            {
-                this.LoadTextureFromAb(AbBin);
-            }
-            Profiler.EndSample();
-            float abEnd = Time.realtimeSinceStartup;
-
-            float rowStart = Time.realtimeSinceStartup;
+            float rawStart = Time.realtimeSinceStartup;
             Profiler.BeginSample("LoadFromRawData");
             for (int i = 0; i < tryNum; ++i)
             {
                 this.LoadTexture(pvrBin);
             }
             Profiler.EndSample();
-            float rowEnd = Time.realtimeSinceStartup;
+            float rawEnd = Time.realtimeSinceStartup;
 
-            result.text = "Ab : " + (abEnd - abStart) + "\nRaw:" + (rowEnd - rowStart);
+
+            float abStart = Time.realtimeSinceStartup;
+            Profiler.BeginSample("LoadTextureFromAssetBundle");
+            for (int i = 0; i < tryNum; ++i)
+            {
+                this.LoadDataFromAb < Texture2D>(AbBin);
+            }
+            Profiler.EndSample();
+            float abEnd = Time.realtimeSinceStartup;
+
+            float abBinStart = Time.realtimeSinceStartup;
+            Profiler.BeginSample("LoadBinFromAssetBundle");
+            for (int i = 0; i < tryNum; ++i)
+            {
+                this.LoadDataFromAb<TextAsset>(AbBinInBin);
+            }
+            Profiler.EndSample();
+            float abBinEnd = Time.realtimeSinceStartup;
+
+
+            result.text = "Ab : " + (abEnd - abStart) + "\nRaw:" + (rawEnd - rawStart)
+                + "\nBinFromAb:" + (abBinEnd - abBinStart);
         }
 
-        void LoadTextureFromAb(byte[] bin)
+        void LoadDataFromAb<T>(byte[] bin) where T:UnityEngine.Object
         {
 
             try
@@ -98,7 +119,7 @@ namespace NoAssetBundlePrj
                     bin = LoadDataFromStreamingAssets("assetbundletest.ab");
                 }
                 AssetBundle ab = AssetBundle.LoadFromMemory(bin);
-                var all = ab.LoadAllAssets<Texture2D>();
+                var all = ab.LoadAllAssets<T>();
                 ab.Unload(true);
                 ab = null;
             }

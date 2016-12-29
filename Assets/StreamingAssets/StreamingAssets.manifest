@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 3692189769
+CRC: 309034420
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: assetbundletest.ab
+      Dependencies: {}
+    Info_1:
+      Name: binarytest.ab
       Dependencies: {}
