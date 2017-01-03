@@ -47,7 +47,7 @@ namespace NoAssetBundlePrj
             yield return null;
             pvrBin = LoadDataFromStreamingAssets("test.data");
 #if UNITY_ANDROID && !UNITY_EDITOR
-            string path = Path.Combine(Application.streamingAssetsPath, "assetbundletest.ab");
+            string path = Path.Combine(Application.streamingAssetsPath, "android/assetbundletest.ab");
             WWW www = new WWW(path);
             while (!www.isDone) { yield return null; }
             AbBin = www.bytes;
@@ -159,7 +159,16 @@ namespace NoAssetBundlePrj
         byte[] LoadDataFromStreamingAssets(string file)
         {
 
-            string path = Path.Combine(Application.streamingAssetsPath, file );
+            string path = null;
+            
+#if UNITY_ANDROID
+            path = Path.Combine(Application.streamingAssetsPath,"android");
+#elif UNITY_IOS
+            path = Path.Combine(Application.streamingAssetsPath,"ios");
+#else
+#endif
+
+            path=  Path.Combine(path, file);
 #if UNITY_ANDROID && !UNITY_EDITOR
 
             WWW www = new WWW(path);

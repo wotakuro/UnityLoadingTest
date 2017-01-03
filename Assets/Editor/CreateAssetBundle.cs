@@ -7,6 +7,12 @@ public class CreateAssetBundle {
     public static void Execute()
     {
         AssetDatabase.RemoveUnusedAssetBundleNames();
-        BuildPipeline.BuildAssetBundles("Assets/StreamingAssets", BuildAssetBundleOptions.UncompressedAssetBundle,EditorUserBuildSettings.activeBuildTarget);
+#if UNITY_ANDROID
+        BuildPipeline.BuildAssetBundles("Assets/StreamingAssets/Android", BuildAssetBundleOptions.UncompressedAssetBundle,EditorUserBuildSettings.activeBuildTarget);
+#elif UNITY_IOS
+        BuildPipeline.BuildAssetBundles("Assets/StreamingAssets/ios", BuildAssetBundleOptions.UncompressedAssetBundle,EditorUserBuildSettings.activeBuildTarget);
+#else
+        EditorUtility.DisplayDialog("Only mobile", "Only mobile device support.Please switch to ios/android.", "OK");
+#endif
     }
 }
