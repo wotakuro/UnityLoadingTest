@@ -8,7 +8,8 @@ AssetBundleからTextureを読み込むより、Texture2D.LoadRawTextureDataを�
     Texture2D newTex = new Texture2D(2048, 2048, TextureFormat.ETC2_RGB, false);
     newTex.LoadRawTextureData(bin);
     newTex.Apply();
-    /** Textureを無圧縮のAssetBundleから読み込む場合 */
+
+    /** Textureを無圧縮のAssetBundleから読み込む場合 */
     byte[] bin = ReadUncompressedAssetBundleData();
     // ここから計測
     AssetBundle assetBundle = AssetBundle.LoadFromMemory(bin);
