@@ -48,15 +48,35 @@ namespace NoAssetBundlePrj
             string pvrExePath = GetPvrTexToolForWindows();
 
             var rules = GetRules( TargetPlatform.Android, EditorOs.Windows );
-
+            string outputDir = "ConvertOutput";
+            // add createDirectory
+            var directories = GetCreateDirectories(rules);
+            foreach (var dir in directories)
+            {
+                sb.Append("mkdir ").Append(outputDir).Append("\\").Append(dir).Append(System.Environment.NewLine);
+            }
+            // add convertRules
             foreach (var rule in rules)
             {
-                sb.Append(pvrExePath);
-                sb.Append( GetTextureConvertOption(rule, "ConvertOutput") ) ;
-                sb.Append( "\n" );
+                sb.Append( pvrExePath );
+                sb.Append( GetTextureConvertOption(rule, outputDir ) ) ;
+                sb.Append( System.Environment.NewLine );
             }
             System.IO.File.WriteAllText("ConvertAndroid.bat", sb.ToString());
             Debug.Log(pvrExePath);
+        }
+
+        private static HashSet<string> GetCreateDirectories(List<TextureConvertRule> rules) {
+            HashSet<string> directories = new HashSet<string>();
+            foreach (var rule in rules)
+            {
+                string dir = System.IO.Path.GetDirectoryName(rule.pathIn);
+                if (!directories.Contains(dir))
+                {
+                    directories.Add(dir);
+                }
+            }
+            return directories;
         }
 
 
