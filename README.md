@@ -37,6 +37,48 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 ## 結果のサマリー
 
 ## 結果データ＠Android
+### 32×32 ETC_RGB4(mipmapなし) ファイルサイズ：0.5KB
+<table>
+<tr>  <td></td>
+<td  colspan="3">Nexus 7(2013)</td>
+<td  colspan="3">Galaxy S6</td>
+</tr>
+<tr>
+  <td></td>
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+  
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+</tr>
+
+ <tr>
+ <td>一回目</td>
+  <!-- -->
+  <td>0.002746582</td><td>0.000915273</td><td>3.0008</td>
+  <!-- -->
+  <td>0.002131939</td><td>0.0006346703</td><td>3.3591</td>
+ </tr>
+ <tr>
+ <td>二回目</td>
+  <!-- -->
+  <td>0.002288818</td><td>0.000579834</td><td>3.9473</td>
+  <!-- -->
+  <td>0.002288818</td><td>0.0002727509</td><td>8.3916</td>
+ </tr>
+ <tr>
+ <td>三回目</td>
+  <!-- -->
+  <td>0.003173828</td><td>0.000579834</td><td>5.4736</td>
+  <!-- -->
+  <td>0.002044678</td><td>0.0003051758</td><td>6.7000</td>
+ </tr>
+</table>
+
+
+
 ### 2048×2048 ETC_RGB4(mipmapなし) ファイルサイズ：2048KB
 <table>
 <tr>  <td></td>
@@ -156,4 +198,169 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
   <td>0.1790771</td><td>0.1390076</td><td>1.2882</td>
  </tr>
 </table>
+
+
+## 結果データ＠iOS
+### 32×32 PVRTC_RGB4(mipmapなし) ファイルサイズ：0.5KB
+<table>
+<tr>  <td></td>
+<td  colspan="3">iPhone5c</td>
+<td  colspan="3">iPhone6S</td>
+</tr>
+<tr>
+  <td></td>
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+  
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+</tr>
+
+ <tr>
+ <td>一回目</td>
+  <!-- -->
+  <td>0.003101826</td><td>0.0008974075</td><td>3.4564</td>
+  <!-- -->
+  <td>0.002513885</td><td>0.00008583069</td><td>29.2888</td>
+ </tr>
+ <tr>
+ <td>二回目</td>
+  <!-- -->
+  <td>0.00340271</td><td>0.0009498596</td><td>3.5823</td>
+  <!-- -->
+  <td>0.00252533</td><td>0.00008010864</td><td>31.5238</td>
+ </tr>
+ <tr>
+ <td>三回目</td>
+  <!-- -->
+  <td>0.003250122</td><td>0.0007858276</td><td>4.1359</td>
+  <!-- -->
+  <td>0.002304077</td><td>0.000114409</td><td>20.139</td>
+ </tr>
+</table>
+
+### 2048×2048 PVRTC_RGB4(mipmapなし) ファイルサイズ：2048KB
+<table>
+<tr>  <td></td>
+<td  colspan="3">iPhone5c</td>
+<td  colspan="3">iPhone6S</td>
+</tr>
+<tr>
+  <td></td>
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+  
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+</tr>
+
+ <tr>
+ <td>一回目</td>
+  <!-- -->
+  <td>0.03134537</td><td>0.01697922</td><td>1.8461</td>
+  <!-- -->
+  <td>0.01776981</td><td>0.009437561</td><td>1.8828</td>
+ </tr>
+ <tr>
+ <td>二回目</td>
+  <!-- -->
+  <td>0.03353882</td><td>0.01564789</td><td>2.1433</td>
+  <!-- -->
+  <td>0.01673889</td><td>0.01058197</td><td>1.5818</td>
+ </tr>
+ <tr>
+ <td>三回目</td>
+  <!-- -->
+  <td>0.03235626</td><td>0.01696014</td><td>1.9077</td>
+  <!-- -->
+  <td>0.01607513</td><td>0.009803772</td><td>1.6396</td>
+ </tr>
+</table>
+
+
+### 2048×2048 RGBA32(mipmapなし) ファイルサイズ：16384KB
+<table>
+<tr>  <td></td>
+<td  colspan="3">iPhone5c</td>
+<td  colspan="3">iPhone6S</td>
+</tr>
+<tr>
+  <td></td>
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+  
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+</tr>
+
+ <tr>
+ <td>一回目</td>
+  <!-- -->
+  <td>0.2029037</td><td>0.138443</td><td>1.4656</td>
+  <!-- -->
+  <td>0.06794071</td><td>0.04671097</td><td>1.4544</td>
+ </tr>
+ <tr>
+ <td>二回目</td>
+  <!-- -->
+  <td>0.2051926</td><td>0.1414261</td><td>1.4508</td>
+  <!-- -->
+  <td>0.06585503</td><td>0.05086327</td><td>1.2947</td>
+ </tr>
+ <tr>
+ <td>三回目</td>
+  <!-- -->
+  <td>0.1964493</td><td>0.1325378</td><td>1.4822</td>
+  <!-- -->
+  <td>0.06612396</td><td>0.05685425</td><td>1.1630</td>
+ </tr>
+</table>
+
+### 2048×2048 RGBA32(mipmapあり) ファイルサイズ：21845KB
+<table>
+<tr>  <td></td>
+<td  colspan="3">iPhone5c</td>
+<td  colspan="3">iPhone6S</td>
+</tr>
+<tr>
+  <td></td>
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+  
+  <td>AssetBundle読み込み(秒)</td>
+  <td>RawData読み込み(秒)</td>
+  <td>RawDataによる高速化(倍率)</td>
+</tr>
+
+ <tr>
+ <td>一回目</td>
+  <!-- -->
+  <td>0.2029037</td><td>0.138443</td><td>1.4656</td>
+  <!-- -->
+  <td>0.06794071</td><td>0.04671097</td><td>1.4544</td>
+ </tr>
+ <tr>
+ <td>二回目</td>
+  <!-- -->
+  <td>0.2051926</td><td>0.1414261</td><td>1.4508</td>
+  <!-- -->
+  <td>0.06585503</td><td>0.05086327</td><td>1.2947</td>
+ </tr>
+ <tr>
+ <td>三回目</td>
+  <!-- -->
+  <td>0.1964493</td><td>0.1325378</td><td>1.4822</td>
+  <!-- -->
+  <td>0.06612396</td><td>0.05685425</td><td>1.1630</td>
+ </tr>
+</table>
+
+
 
