@@ -1,6 +1,22 @@
 # このプロジェクトについて
-AssetBundleからTextureを読み込むより、Texture2D.LoadRawTextureDataを利用して読み込む場合の方がどの程度早いか計測するためのプロジェクトです。
+AssetBundleからTextureを読み込むより、Texture2D.LoadRawTextureDataを利用して読み込む場合の方がどの程度早いか計測するためのプロジェクトです。<br />
+どちらも byte[]からの読み込みで実験しています。
 
+    /** Textureを生で読み込む場合 */
+    byte[] bin = ReadTextureRawData();
+    // ここから計測
+    Texture2D newTex = new Texture2D(2048, 2048, TextureFormat.ETC2_RGB, false);
+    newTex.LoadRawTextureData(bin);
+    newTex.Apply();
+
+    /** TextureをAssetBundleから読み込む場合 */
+    byte[] bin = ReadUncompressedAssetBundleData();
+    // ここから計測
+    AssetBundle assetBundle = AssetBundle.LoadFromMemory(bin);
+    var texture = assetBundle.Load<Texture2D>("testTexture");  
+<br/>
+AssetBundleのサイズや端末スペックによって効果が大きく変動してしまいますが、目安としては倍近く早くなりそうな結果になりました。<br/>
+AssetBundleサイズが大きいほど、テクスチャのRawData読み込みによる高速化は薄れていきます。
 
 # このプロジェクトの利用の仕方について
 
