@@ -34,7 +34,6 @@ SwitchPlatformで、Android もしくはiOSへと切り替えてください。<
 Unity 5.4.2p4 にてRealseビルドでテスト。<br />
 iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フォーマットを試行。
 
-## 結果のサマリー
 
 ## 結果データ＠Android
 ### 32×32 ETC_RGB4(mipmapなし) ファイルサイズ：0.5KB
