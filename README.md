@@ -8,12 +8,12 @@ AssetBundleからTextureを読み込むより、Texture2D.LoadRawTextureDataを�
     Texture2D newTex = new Texture2D(2048, 2048, TextureFormat.ETC2_RGB, false);
     newTex.LoadRawTextureData(bin);
     newTex.Apply();
-
     /** Textureを無圧縮のAssetBundleから読み込む場合 */
     byte[] bin = ReadUncompressedAssetBundleData();
     // ここから計測
     AssetBundle assetBundle = AssetBundle.LoadFromMemory(bin);
     var texture = assetBundle.Load<Texture2D>("testTexture");  
+    
 <br/>
 AssetBundleのサイズや端末スペックによって効果が大きく変動してしまいますが、目安としては倍近く早くなりそうな結果になりました。<br/>
 AssetBundleサイズが大きいほど、テクスチャのRawData読み込みによる高速化は薄れていきます。
