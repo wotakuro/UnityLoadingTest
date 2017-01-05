@@ -18,8 +18,8 @@ Loading code is like below.
     var texture = assetBundle.Load<Texture2D>("testTexture");  
     
 <br/>
-The loading time is depends on the size of file or device.
-In general situation,  Load Texture from RawData is about x2 faster than Loading from AssetBundles.<br/>
+The loading time is depends on the size of file or device.<br />
+In general situation,  Load Texture from RawData is around x2 faster than Loading from AssetBundles.<br/>
 If the size of AssetBundle is bigger , the effect will be lower.
 
 # How to build this project
