@@ -440,8 +440,6 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 
 
 # 端末別ロードテスト
-## 
-## AssetBundle 2048×2048 RGBA32(mipmapあり) ファイルサイズ：21845KB
 
 <table>
 <tr>  <td></td>
