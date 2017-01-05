@@ -439,4 +439,18 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </table>
 
 
+# 端末別ロードテスト
+## 
+## AssetBundle 2048×2048 RGBA32(mipmapあり) ファイルサイズ：21845KB
 
+<table>
+<tr>  <td></td>
+<td>Nexus7 2013</td><td>Galaxy S6</td>
+<td>iPhone5c</td><td>iPhone6S</td>
+</tr>
+<tr>
+<td>Texture2D.LoadRawData<br/>2048×2048 RGBA32(mipmapなし)<br/>ファイルサイズ：16384KB</td>
+<td> 0.2454630 秒</td><td>0.077752746秒</td>
+<td>0.137468966秒</td><td>0.0242449秒</td>
+</tr>
+</table>
