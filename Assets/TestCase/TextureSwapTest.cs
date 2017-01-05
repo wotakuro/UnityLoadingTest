@@ -20,9 +20,9 @@ namespace NoAssetBundleTestPrj
 #endif
 
         /// <summary>
-        /// 事前に ManagedHeapを確保しに行きます
+        /// Preallocate for Managed Memory
         /// </summary>
-        /// <param name="size">何バイト分確保したいか</param>
+        /// <param name="size">Size of prealloc memory</param>
         public static void AllocateGcMemory(int size)
         {
 #if !UNITY_EDITOR && (UNITY_IOS || UNITY_ANDROID ) && ENABLE_IL2CPP
@@ -31,7 +31,7 @@ namespace NoAssetBundleTestPrj
         }
 
         /// <summary>
-        /// シーンロード前に呼び出されます
+        /// before scene load
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void AllocateGcBeforeStartApp()
