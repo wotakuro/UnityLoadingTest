@@ -1,7 +1,7 @@
 # About this Project
 Read this in other languages: [English](README.en.md), [日本語](README.ja.md)<br />
 
-Test Project for Loading Texture2D from AssetBundle VS Loading Texture2D using Texture2D.LoadRawTextureData.<br />
+Test Project for "Loading Texture2D from AssetBundle" VS "Loading Texture2D using Texture2D.LoadRawTextureData".<br />
 Loading code is like below.
 
     /** Load Texture from RawData */
