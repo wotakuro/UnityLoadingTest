@@ -458,4 +458,18 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 <td>0.4213867 秒</td><td>0.1482623 秒</td>
 <td>0.2015152 秒</td><td>0.0383516 秒</td>
 </tr>
+
+
+
+<tr>
+<td>Texture2D.LoadRawData<br/>2048×2048 RGBA32(mipmapあり)<br/>ファイルサイズ：21845KB</td>
+<td> 0.456309 秒</td><td>0.1367810 秒</td>
+<td> 0.1374689 秒</td><td>0.0514761 秒</td>
+</tr>
+<tr>
+<td>AssetBundle<br/>2048×2048 RGBA32(mipmapなし)<br/>ファイルサイズ：16384KB</td>
+<td>0.6056823 秒</td><td>0.18949 秒</td>
+<td>0.3310263 秒</td><td>0.066639 秒</td>
+</tr>
+
 </table>
