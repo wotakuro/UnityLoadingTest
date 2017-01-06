@@ -101,11 +101,7 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
   <!-- -->
   <td>0.002155145</td><td>0.000404199</td><td>5.3318</td>
  </tr>
-
 </table>
-
-
-
 ### 2048×2048 ETC_RGB4(mipmapなし) ファイルサイズ：2048KB
 <table>
 <tr>  <td></td>
@@ -114,13 +110,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
@@ -161,13 +157,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
@@ -207,13 +203,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
@@ -257,13 +253,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
@@ -306,13 +302,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
@@ -324,8 +320,8 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
  </tr>
  <tr>
  <td>二回目</td>
- ?<!-- -->
- ?<td>0.03353882</td><td>0.01564789</td><td>2.1433</td>
+ <!-- -->
+ <td>0.03353882</td><td>0.01564789</td><td>2.1433</td>
   <!-- -->
   <td>0.01673889</td><td>0.01058197</td><td>1.5818</td>
  </tr>
@@ -354,13 +350,13 @@ iOS/Android共にIL2CPPを利用。いくつかのテクスチャサイズ・フ
 </tr>
 <tr>
   <td></td>
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
   
- ?<td>AssetBundle読み込み(秒)</td>
- ?<td>RawData読み込み(秒)</td>
- ?<td>RawDataによる高速化(倍率)</td>
+ <td>AssetBundle読み込み(秒)</td>
+ <td>RawData読み込み(秒)</td>
+ <td>RawDataによる高速化(倍率)</td>
 </tr>
 
  <tr>
